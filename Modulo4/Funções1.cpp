@@ -10,7 +10,7 @@ void Media(int N[10])
 {
     int soma = 0;
     for (int i = 0; i < 10; i++) soma += N[i];
-    cout << "A média dos números é: " << soma/10 << endl;
+    cout << "A mÃ©dia dos nÃºmeros Ã©: " << soma/10 << endl;
 }
 void Menor(int N[10])
 {
@@ -19,7 +19,7 @@ void Menor(int N[10])
     {
         if (N[i] < menor) menor = N[i];
     }
-    cout << "O menor número é: " << menor << endl;
+    cout << "O menor nÃºmero Ã©: " << menor << endl;
 }
 void Maior(int N[10])
 {
@@ -28,53 +28,49 @@ void Maior(int N[10])
     {
         if (N[i] > maior) maior = N[i];
     }
-    cout << "O maior número é: " << maior <<endl;
-}
-void Menu(int numeros[10])
-{
-    int R;
-    cout << "**************************\n";
-    cout << "           Isto :)\n";
-    cout << "**************************\n";
-    cout << "1- Média\n";
-    cout << "2- Menor\n";
-    cout << "3- Maior\n";
-    cout << "**************************\n";
-    cin >> R;
-    switch (R)
-    {
-    case 1:
-        Media(numeros);
-        system("pause");
-        system("cls");
-        Menu(numeros);
-        break;
-    case 2:
-        Menor(numeros);
-        system("pause");
-        system("cls");
-        Menu(numeros);
-        break;
-    case 3:
-        Maior(numeros);
-        system("pause");
-        system("cls");
-        Menu(numeros);
-        break;
-    default:
-        break;
-    }
-
-
+    cout << "O maior nÃºmero Ã©: " << maior <<endl;
 }
 
 int main() {
     setlocale(LC_ALL, "Portuguese");
     int numeros[10];
-    cout << "Escreve 10 números: ";
+    cout << "Escreve 10 nÃºmeros: ";
     for (int i = 0; i < 10; i++) cin >> numeros[i];
     system("cls");
-    Menu(numeros);
-
-    return 0;
+    int R;
+    while (true)
+    {
+        cout << "**************************\n";
+        cout << "           Isto :)\n";
+        cout << "**************************\n";
+        cout << "1- MÃ©dia\n";
+        cout << "2- Menor\n";
+        cout << "3- Maior\n";
+        cout << "0- Sair\n";
+        cout << "**************************\n";
+        cin >> R;
+        switch (R)
+        {
+        case 1:
+            Media(numeros);
+            system("pause");
+            system("cls");
+            break;
+        case 2:
+            Menor(numeros);
+            system("pause");
+            system("cls");
+            break;
+        case 3:
+            Maior(numeros);
+            system("pause");
+            system("cls");
+            break;
+        case 0:
+            return 0;
+            break;
+        default:
+            break;
+        }
+    }
 }
